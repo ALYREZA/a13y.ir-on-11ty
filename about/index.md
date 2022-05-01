@@ -1,10 +1,10 @@
 ---
+permalink: /about-me/
 layout: layouts/post.njk
-title: About Me
-templateClass: tmpl-post
+title: درباره‌ی من
 eleventyNavigation:
-  key: About Me
+  key: درباره‌ی من
   order: 3
 ---
 
-I am a person that writes stuff.
+این صفحه قرار است درباره ی من باشد
