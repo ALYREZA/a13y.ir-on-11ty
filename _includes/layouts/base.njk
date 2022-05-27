@@ -14,7 +14,7 @@
 
   </head>
 
-  <body class="relative">
+  <body class="relative container">
     <main class="flex flex-1 flex-row xs:flex-col sm:flex-col min-h-screen">
       <header class="flex  text-gray-400 pt-20 xs:py-3 sm:py-4 bg-gray-50 px-2">
 
@@ -32,7 +32,9 @@
         {{ content | safe }}
       </article>
     </main>
-    <footer></footer>
+    <footer class="px-8 py-2">
+      <div class="text-left text-gray-300"> v{{pkg.version}}</div>
+    </footer>
 
     <!-- Current page: {{ page.url | url }} -->
   </body>

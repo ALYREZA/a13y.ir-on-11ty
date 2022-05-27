@@ -1,0 +1,38 @@
+{
+    "title": "لینک های من",
+    "roundMode": "rounded-full",
+    "data": [
+        {
+            "name": "گوگل ۱",
+            "url": "https://google.com",
+            "animate": "wobble",
+            "animated": false,
+            "color": "bg-red-500",
+            "textColor": "text-white"
+        },
+        {
+            "name": "alyreza.mahmoudy@gmail.com",
+            "url": "https://google.com",
+            "animate": "wobble",
+            "animated": false,
+            "color": "bg-blue-500",
+            "textColor": "text-white"
+        },
+        {
+            "name": "گوگل ۲",
+            "url": "https://google.com",
+            "animate": "tada",
+            "animated": false,
+            "color": "bg-gray-200",
+            "textColor": "text-black"
+        },
+        {
+            "name": "گوگل ۳",
+            "url": "https://google.com",
+            "animate": "flash",
+            "animated": false,
+            "color": "bg-gray-200",
+            "textColor": "text-black"
+        }
+    ]
+}

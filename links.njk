@@ -1,0 +1,19 @@
+---
+layout: layouts/empty.njk
+permalink: /links/
+---
+
+<div class="flex flex-1 items-center justify-center overflow-x-hidden">
+    <div class="min-h-screen w-1/2 sm:w-3/4 xs:w-full md:w-4/5 px-1">
+        <h1 class=" text-2xl my-5">{{links.title}}</h1>
+        <ol>
+            {% for link in links.data %}
+                <a target="_blank" class="block mb-2 line-clamp-1 {% if link.animated %} animate__animated animate__{{link.animate}} animate__infinite {% endif %}" href="{{link.url}}">
+                    <li class="flex h-12 {{links.roundMode}} {{link.color}} {{link.textColor}} items-center justify-center text-lg text-center">  
+                        {{link.name | safe}}
+                    </li>
+                </a>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
