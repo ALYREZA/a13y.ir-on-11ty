@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 ---
 <h1>{{ title }}</h1>
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+<time class="text-sm text-gray-400" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 
 
 
@@ -17,21 +17,15 @@ layout: layouts/base.njk
     <a href="{{ tagUrl | url }}" class=" mx-2 text-sm bg-gray-100 px-1 rounded-sm">{{ tag }}</a>
   {%- endfor %}
 </div>
-{%- if collections.posts %}
-{%- set nextPost = collections.posts | getNextCollectionItem(page) %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-{%- if nextPost or previousPost %}
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-<div class=" flex-none">
-  {%- for tag in tags | filterTagList -%}
-    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-    <a href="{{ tagUrl | url }}" class=" mx-2 text-sm bg-gray-100 px-1 rounded-sm">{{ tag }}</a>
-  {%- endfor %}
-</div>
 
-<ul>
-  {%- if nextPost %}<li>Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-  {%- if previousPost %}<li>Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-</ul>
-{%- endif %}
+{%- if collections.posts %}
+  {%- set nextPost = collections.posts | getNextCollectionItem(page) | isDraft %}
+  {%- set previousPost = collections.posts | getPreviousCollectionItem(page) | isDraft %}
+  {%- if nextPost or previousPost %}
+
+    <ul class="flex flex-row flex-1 list-none">
+      {%- if nextPost %}<li class=" justify-start">بعدی: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+      {%- if previousPost %}<li class=" justify-end">قبلی: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+    </ul>
+  {%- endif %}
 {%- endif %}

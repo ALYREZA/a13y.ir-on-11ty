@@ -46,7 +46,28 @@ module.exports = function (eleventyConfig) {
                 (e) => console.error(e)
             )
     })
+    eleventyConfig.addFilter('isDraft', function (obj) {
+        let isDraft = obj
+        if (typeof obj === 'object') {
+            const hasData = obj.hasOwnProperty('data')
+            if (hasData) {
+                const { data } = obj
+                const hasDraft = data.hasOwnProperty('draft')
+                if (hasDraft) {
+                    const { draft } = data
+                    if (draft) {
+                        isDraft = false
+                    }
+                }
+            }
+        }
 
+        return isDraft
+    })
+    eleventyConfig.addFilter('log', async (cnt) => {
+        console.log('================', { cnt }, this)
+        return cnt
+    })
     eleventyConfig.addFilter('readableDate', (dateObj) => {
         return DateTime.fromJSDate(dateObj, {
             zone: 'Asia/Tehran',

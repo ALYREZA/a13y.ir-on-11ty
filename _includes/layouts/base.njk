@@ -14,9 +14,9 @@
 
   </head>
 
-  <body class="relative container">
+  <body class="relative">
     <main class="flex flex-1 flex-row xs:flex-col sm:flex-col min-h-screen">
-      <header class="flex  text-gray-400 pt-20 xs:py-3 sm:py-4 bg-gray-50 px-2">
+      <header class="flex text-gray-400 min-h-full pt-20 xs:py-3 sm:py-4 bg-gray-50 px-2">
 
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
         <ul class="flex flex-col xs:flex-row sm:flex-row">
@@ -32,8 +32,8 @@
         {{ content | safe }}
       </article>
     </main>
-    <footer class="px-8 py-2">
-      <div class="text-left text-gray-300"> v{{pkg.version}}</div>
+    <footer class=" absolute bottom-0 left-0 px-8 py-2">
+      <div class="text-left text-gray-500"> v{{pkg.version | urlize |safe}}</div>
     </footer>
 
     <!-- Current page: {{ page.url | url }} -->
