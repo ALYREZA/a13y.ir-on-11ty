@@ -5,6 +5,7 @@ layout: layouts/base.njk
 <time class="text-sm text-gray-400" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 
 
+
 {{ content | safe }}
 
 
@@ -17,9 +18,9 @@ layout: layouts/base.njk
   {%- endfor %}
 </div>
 
-{%- if collections.posts %}
-  {%- set nextPost = collections.posts | getNextCollectionItem(page) | isDraft %}
-  {%- set previousPost = collections.posts | getPreviousCollectionItem(page) | isDraft %}
+{%- if collections.projects %}
+  {%- set nextPost = collections.projects | getNextCollectionItem(page) | isDraft %}
+  {%- set previousPost = collections.projects | getPreviousCollectionItem(page) | isDraft %}
   {%- if nextPost or previousPost %}
 
     <ul class="flex flex-row flex-1 list-none">

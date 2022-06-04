@@ -1,0 +1,13 @@
+---
+layout: layouts/home.njk
+permalink: /projects/
+eleventyNavigation:
+  key: projects
+  title: پروژه‌ها
+  order: 3
+---
+
+<h1>پروژه ها</h1>
+
+{% set projectslist = collections.projects %}
+{% include "projectslist.njk" %}

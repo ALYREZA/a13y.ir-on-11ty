@@ -1,5 +1,5 @@
-<ul reversed class="postlist list-none" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-{% for post in postslist | reverse %}
+<ul reversed class="postlist list-none" style="counter-reset: start-from {{ (postslistCounter or projectslist.length) + 1 }}">
+{% for post in projectslist | reverse %}
 {%- set isDraft = post.data.draft %}
   <li class=" text-right {% if post.url == url %} postlist-item-active{% endif %}">
     <a {% if isDraft === false %} href="{{ post.url | url }}"{% endif %} class="postlist-link">

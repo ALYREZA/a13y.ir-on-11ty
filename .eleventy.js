@@ -68,6 +68,14 @@ module.exports = function (eleventyConfig) {
         console.log('================', { cnt }, this)
         return cnt
     })
+    eleventyConfig.addFilter('category', (cnt) => {
+        const paths = cnt.split('/')
+        const navigation = {
+            projects: 'پروژه‌ها',
+            posts: 'پست‌ها',
+        }
+        return navigation[paths[1]]
+    })
     eleventyConfig.addFilter('readableDate', (dateObj) => {
         return DateTime.fromJSDate(dateObj, {
             zone: 'Asia/Tehran',
@@ -112,7 +120,10 @@ module.exports = function (eleventyConfig) {
 
     function filterTagList(tags) {
         return (tags || []).filter(
-            (tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
+            (tag) =>
+                ['all', 'nav', 'post', 'posts', 'project', 'projects'].indexOf(
+                    tag
+                ) === -1
         )
     }
 

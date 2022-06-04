@@ -16,24 +16,23 @@
 
   <body class="relative">
     <main class="flex flex-1 flex-row xs:flex-col sm:flex-col min-h-screen">
-      <header class="flex text-gray-400 min-h-full pt-20 xs:py-3 sm:py-4 bg-gray-50 px-2">
+      <header class="flex text-gray-300 min-h-full pt-20 xs:py-3 sm:py-4 bg-gray-50 px-2">
 
         {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
         <ul class="flex flex-col xs:flex-row sm:flex-row">
         {%- for entry in collections.all | eleventyNavigation %}
-          <li class="mx-3 my-1 hover:text-gray-900 hover:underline {% if entry.url == page.url %} text-gray-900 underline {% endif %}">
+          <li class="mx-3 my-1 hover:text-gray-900 hover:underline {% if entry.url == page.url %} text-black underline {% endif %}">
             <a href="{{ entry.url | url }}">{{ entry.title }}</a>
           </li>
         {%- endfor %}
         </ul>
       </header>
-
       <article class="flex max-w-full flex-1 flex-col pt-20 px-8 prose lg:prose-xl pb-10 {{ templateClass or '' }}">
         {{ content | safe }}
       </article>
     </main>
     <footer class=" absolute bottom-0 left-0 px-8 py-2">
-      <div class="text-left text-gray-500"> v{{pkg.version | urlize |safe}}</div>
+      <div class="text-left text-gray-300"> v{{pkg.version | safe}}</div>
     </footer>
 
     <!-- Current page: {{ page.url | url }} -->
