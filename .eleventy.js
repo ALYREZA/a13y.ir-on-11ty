@@ -19,6 +19,7 @@ const cssCode = fs.readFileSync(cssTemplate, 'utf8')
 module.exports = function (eleventyConfig) {
     // Copy the `img` and `css` folders to the output
     eleventyConfig.addPassthroughCopy('img')
+    eleventyConfig.addPassthroughCopy('fonts')
     eleventyConfig.addPassthroughCopy('styles')
 
     // Add plugins
@@ -93,12 +94,18 @@ module.exports = function (eleventyConfig) {
     })
 
     eleventyConfig.addFilter('tillNow', (dateObj) => {
-        return DateTime.fromJSDate(dateObj, {
+        const newDate = DateTime.fromJSDate(dateObj, {
             zone: 'Asia/Tehran',
             locale: 'fa',
         })
-            .diffNow(['hours', 'days'])
+        const expired = newDate.diffNow() < 0
+        if (expired) {
+            return 'تاریخ دقیقی از انتشار آن در دست نیست'
+        }
+        const dateTimeOf = newDate
+            .diffNow(['hours', 'days'], { conversionAccuracy: 'casual' })
             .toHuman()
+        return `-${dateTimeOf} تا انتشار`
     })
 
     // Get the first `n` elements of a collection.

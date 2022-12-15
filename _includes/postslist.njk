@@ -1,19 +1,16 @@
 <ul reversed class="postlist list-none" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
 {% for post in postslist | reverse %}
 {%- set isDraft = post.data.draft %}
-  <li class=" text-right {% if post.url == url %} postlist-item-active{% endif %}">
-    <a {% if isDraft === false %} href="{{ post.url | url }}"{% endif %} class="postlist-link">
+  <li style="direction: rtl" class=" text-right {% if post.url == url %} postlist-item-active{% endif %}">
+    <a {% if isDraft === false %} href="{{ post.url | url }}" class=" underline" {% else %} class="no-underline" {% endif %}>
       {% if post.data.title %}
         {{ post.data.title }}
-        {% if isDraft %}
-          [به زودی منتشر میشود]
-        {% endif %}
       {% else %}
       <code>{{ post.url }}</code>
       {% endif %}
     </a>
     {% if isDraft %}
-      <small class=" text-xs"><time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | tillNow }} تا انتشار </time></small>
+      <small class=" text-xs"><time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | tillNow }}</time></small>
     {% else %}
       <small class=" text-xs"><time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></small>
     {% endif %}
