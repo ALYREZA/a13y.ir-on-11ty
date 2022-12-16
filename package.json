@@ -7,7 +7,7 @@
         "email": "Alyreza.mahmoudy@gmail.com"
     },
     "scripts": {
-        "build": "env NODE_ENV=production npx eleventy --pathprefix 'a13y.ir-on-11ty'",
+        "build": "env NODE_ENV=production npx eleventy",
         "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
         "watch": "npx @11ty/eleventy --watch",
         "serve": "npx @11ty/eleventy --serve",
