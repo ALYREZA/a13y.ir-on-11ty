@@ -1,7 +1,7 @@
 ---
-title: 'صفحه ی رزومه ی من'
+title: ' رزومه ی من'
 description: 'توضیحات'
-layout: layouts/home.njk
+layout: layouts/base.njk
 permalink: /resume.html
 ---
 

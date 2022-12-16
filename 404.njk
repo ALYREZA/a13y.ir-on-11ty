@@ -1,15 +1,13 @@
----
-layout: layouts/home.njk
+--- 
+layout: layouts/empty.njk
 permalink: /404.html
-eleventyExcludeFromCollections: true
+eleventyExcludeFromCollections: true 
 ---
-<div class="w-full min-h-screen">
+{% set emoji=["(;-;)","\(o_o)/","(='X'=)","(·.·)","(·_·)","(>_<)","\(^Д^)/","(^_^)b","(˚Δ˚)b","(o^^)o","(^-^*)","(≥o≤)"] %}
 
-<div class="flex flex-1 items-center justify-center">
+<div class="min-h-screen flex flex-1 flex-col items-center justify-center">
 
-    <h1 class="text-8xl">(^_^)b</h1>
-    <p class="text-lg">Something went wrong. Please try again soon.</p>
-
-</div>
+    <h1 style="direction: ltr;font-size: 10rem;" class="text-gray-300">{{emoji | random}}</h1>
+    <p class="text-lg text-center mt-4"> متاسفانه، صفحه‌ی مورد نظر یافت نشد. </p>
 
 </div>

@@ -24,12 +24,14 @@ module.exports = function (eleventyConfig) {
 
     // Add plugins
     eleventyConfig.addPlugin(pluginRss)
-    eleventyConfig.addPlugin(pluginSyntaxHighlight)
+    eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+        alwaysWrapLineHighlights: true,
+        preAttributes: { tabindex: 0 },
+    })
     eleventyConfig.addPlugin(pluginNavigation)
 
     // Add Postcss and Tailwindcss
     eleventyConfig.on('eleventy.after', async (changedFiles) => {
-        console.log('changed fired !')
         postCss([tailwind, postcss100vh, autoprefixer])
             .use(atImport)
             .process(cssCode, {
@@ -39,7 +41,7 @@ module.exports = function (eleventyConfig) {
                 (r) => {
                     const cssPath = path.resolve(
                         __dirname,
-                        './_site/styles/main.css'
+                        './_site/styles/main.min.css'
                     )
                     const minCss = new CleanCSS().minify(r.css).styles
                     fs.writeFileSync(cssPath, minCss)
@@ -65,7 +67,7 @@ module.exports = function (eleventyConfig) {
 
         return isDraft
     })
-    eleventyConfig.addFilter('log', async (cnt) => {
+    eleventyConfig.addFilter('log', (cnt) => {
         console.log('================', { cnt }, this)
         return cnt
     })
@@ -105,7 +107,7 @@ module.exports = function (eleventyConfig) {
         const dateTimeOf = newDate
             .diffNow(['hours', 'days'], { conversionAccuracy: 'casual' })
             .toHuman()
-        return `-${dateTimeOf} تا انتشار`
+        return ` ${dateTimeOf} تا انتشار `
     })
 
     // Get the first `n` elements of a collection.
