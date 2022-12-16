@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('img')
     eleventyConfig.addPassthroughCopy('fonts')
     eleventyConfig.addPassthroughCopy('styles')
+    eleventyConfig.addPassthroughCopy('./CNAME')
 
     // Add plugins
     eleventyConfig.addPlugin(pluginRss)
