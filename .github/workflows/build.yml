@@ -31,4 +31,5 @@ jobs:
               with:
                   publish_dir: ./_site
                   deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-                  github_token: ${{ secrets.GIT_TOKEN }}
+                  personal_token: ${{ secrets.GIT_TOKEN }}
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
