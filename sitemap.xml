@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://example.com/a13y.ir-on-11ty/about-me/</loc>
+    <loc>https://example.com/about-me/</loc>
     <lastmod>2022-12-16</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/a13y.ir-on-11ty/posts/</loc>
+    <loc>https://example.com/posts/</loc>
     <lastmod>2022-12-16</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/a13y.ir-on-11ty/</loc>
+    <loc>https://example.com/</loc>
     <lastmod>2022-12-16</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/a13y.ir-on-11ty/links/</loc>
+    <loc>https://example.com/links/</loc>
     <lastmod>2022-12-16</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/a13y.ir-on-11ty/page-list/</loc>
+    <loc>https://example.com/page-list/</loc>
     <lastmod>2022-12-16</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/a13y.ir-on-11ty/projects/</loc>
+    <loc>https://example.com/projects/</loc>
     <lastmod>2022-12-16</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/a13y.ir-on-11ty/resume.html</loc>
+    <loc>https://example.com/resume.html</loc>
     <lastmod>2022-12-16</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/a13y.ir-on-11ty/tags/</loc>
+    <loc>https://example.com/tags/</loc>
     <lastmod>2022-12-16</lastmod>
   </url>
 </urlset>

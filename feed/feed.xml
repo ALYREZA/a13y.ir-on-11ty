@@ -3,9 +3,9 @@
 	<title>وبلاگ من</title>
 	<subtitle>I am writing about my experiences as a naval navel-gazer.</subtitle>
 	
-	<link href="https://example.com/a13y.ir-on-11ty/feed/feed.xml" rel="self"/>
+	<link href="https://example.com/feed/feed.xml" rel="self"/>
 	<link href="https://example.com/"/>
-	<updated>2022-12-16T14:19:09Z</updated>
+	<updated>2022-12-16T14:46:15Z</updated>
 	<id>https://example.com/</id>
 	<author>
 		<name>Your Name Here</name>
