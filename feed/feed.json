@@ -9,6 +9,12 @@
     "name": "Your Name Here",
     "url": "https://example.com/about-me/"
   },
-  "items": [
+  "items": [{
+      "id": "https://example.com/posts/2023-02-08-an-idea-for-banking-applications/",
+      "url": "https://example.com/posts/2023-02-08-an-idea-for-banking-applications/",
+      "title": "ایده‌ای برای اپلیکیشن های بانکی",
+      "content_html": "<h2 id=\"khb-ayn-aydh-ay-kh-my-khwam-dr-mwrdsh-bnwysm\" tabindex=\"-1\"><a class=\"direct-link\" href=\"https://example.com/posts/2023-02-08-an-idea-for-banking-applications/#khb-ayn-aydh-ay-kh-my-khwam-dr-mwrdsh-bnwysm\" aria-hidden=\"true\">#</a> خب این ایده ای که می خوام در موردش بنویسم ؟</h2>\n<p>وقتی تو ماشین خطی نشسته بودم که برسم به خونه هر کدوم از سرنشین ها شماره کارت راننده رو میپرسیدم که براش کارت به کارت کنن</p>\n",
+      "date_published": "2023-02-08T00:00:00Z"
+    }
   ]
 }
