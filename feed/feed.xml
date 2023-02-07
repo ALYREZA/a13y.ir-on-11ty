@@ -19,8 +19,165 @@
 		<id>https://example.com/posts/2023-02-08-an-idea-for-banking-applications/</id>
 		<content type="html">&lt;h2 id=&quot;ayn-aydh-ay-kh-my-khwam-dr-mwrdsh-bnwysm-az-kja-shkl-grft&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;direct-link&quot; href=&quot;https://example.com/posts/2023-02-08-an-idea-for-banking-applications/#ayn-aydh-ay-kh-my-khwam-dr-mwrdsh-bnwysm-az-kja-shkl-grft&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; این ایده ای که می خوام در موردش بنویسم از کجا شکل گرفت ؟&lt;/h2&gt;
 &lt;p&gt;وقتی تو ماشین خطی نشسته بودم که برسم به خونه هر کدوم از سرنشین ها شماره کارت راننده رو میپرسیدم که براش کارت به کارت کنن&lt;/p&gt;
-&lt;p&gt;اگه می شد شماره کارت راننده به صورت QR کد در میومد و وقتی سرنشین ها اسکن‌ش میکردن هدایت‌ش میکرد به اپ بانکی خودشون که در موبایل‌شون هست&lt;br /&gt;
-من این موضوع رو برای اپ همراه کارت چک کردم که بتونم شماره کارت رو به صورت scheme بفرستم&lt;/p&gt;
+&lt;p&gt;اگه می شد شماره کارت راننده به صورت QR کد در میومد و وقتی سرنشین ها اسکن‌ش میکردن هدایت‌ش میکرد به اپ بانکی خودشون که در موبایل‌شون هست.&lt;br /&gt;
+من این موضوع رو برای اپ همراه کارت چک کردم که بتونم شماره کارت رو به صورت scheme بفرستم&lt;br /&gt;
+برای اینکه بدونیم همراه کارت از چه اسکیمی استفاده می کنه کافیه وقتی گوشی اندرویدمون به کامپیوترمون وصله و بیلدتولز اندروید هم روی سیستممون داریم کامند زیر رو اجرا کنیم :&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb shell dumpsys package com.adpdigital.mbs.ayande
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;برای اینکه بفهمیم اپلیکیشن آی دی ش چیه می تونیم از سایت کافه بازار استفاده کنیم :&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://cafebazaar.ir/app/com.adpdigital.mbs.ayande
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;در ضمن بعضی اپ های اپلیکیشن آی دیشون در کافه بازار و گوگل پلی فرق میکنه، بعد از اینکه اپلیکیشن آی دیش رو پیدا کردید و کامند بالا رو اجرا کردید، یه تعداد زیادی خروجی میبینید در ترمینالتون کافیه به بالاترین بخش مراجعه کنید که نوشته &lt;code&gt;Activity Resolver Table:&lt;/code&gt;  که زیرمجموعه ای داره به نام &lt;code&gt;Schemes&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Activity Resolver Table:
+  Full MIME Types:
+      vnd.android.cursor.item/com.adpdigital.mbs.ayande:
+        20f2ab1 com.adpdigital.mbs.ayande/.ui.startup.StartupActivity filter 7845304
+          Action: &amp;quot;android.intent.action.VIEW&amp;quot;
+          Category: &amp;quot;android.intent.category.DEFAULT&amp;quot;
+          StaticType: &amp;quot;vnd.android.cursor.item/com.adpdigital.mbs.ayande&amp;quot;
+
+  Base MIME Types:
+      vnd.android.cursor.item:
+        20f2ab1 com.adpdigital.mbs.ayande/.ui.startup.StartupActivity filter 7845304
+          Action: &amp;quot;android.intent.action.VIEW&amp;quot;
+          Category: &amp;quot;android.intent.category.DEFAULT&amp;quot;
+          StaticType: &amp;quot;vnd.android.cursor.item/com.adpdigital.mbs.ayande&amp;quot;
+
+  Schemes:
+      hamrahcard:
+        20f2ab1 com.adpdigital.mbs.ayande/.ui.startup.StartupActivity filter 1c51317
+          Action: &amp;quot;android.intent.action.VIEW&amp;quot;
+          Category: &amp;quot;android.intent.category.DEFAULT&amp;quot;
+          Category: &amp;quot;android.intent.category.BROWSABLE&amp;quot;
+          Scheme: &amp;quot;hamrahcard&amp;quot;
+      http:
+        20f2ab1 com.adpdigital.mbs.ayande/.ui.startup.StartupActivity filter dbac0ed
+          Action: &amp;quot;android.intent.action.VIEW&amp;quot;
+          Category: &amp;quot;android.intent.category.DEFAULT&amp;quot;
+          Category: &amp;quot;android.intent.category.BROWSABLE&amp;quot;
+          Scheme: &amp;quot;https&amp;quot;
+          Scheme: &amp;quot;http&amp;quot;
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Path: &amp;quot;PatternMatcher{LITERAL: /tup}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /tkh}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /pck}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /c2c}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /bil}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /bal}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /chr}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /qr}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /add}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /wac}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /tup}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /pck}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /c2c}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /bil}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /bal}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /chr}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /qr}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /add}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /giftPage}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /giftPage}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /contacts}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /contacts}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /chargeWallet}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /mrch}&amp;quot;
+      https:
+        20f2ab1 com.adpdigital.mbs.ayande/.ui.startup.StartupActivity filter dbac0ed
+          Action: &amp;quot;android.intent.action.VIEW&amp;quot;
+          Category: &amp;quot;android.intent.category.DEFAULT&amp;quot;
+          Category: &amp;quot;android.intent.category.BROWSABLE&amp;quot;
+          Scheme: &amp;quot;https&amp;quot;
+          Scheme: &amp;quot;http&amp;quot;
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Authority: &amp;quot;i.hamrahcard.ir&amp;quot;: -1
+          Path: &amp;quot;PatternMatcher{LITERAL: /tup}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /tkh}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /pck}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /c2c}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /bil}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /bal}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /chr}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /qr}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /add}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /wac}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /tup}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /pck}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /c2c}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /bil}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /bal}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /chr}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /qr}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /add}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /giftPage}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /giftPage}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /contacts}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /contacts}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /chargeWallet}&amp;quot;
+          Path: &amp;quot;PatternMatcher{LITERAL: /mrch}&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;خب وقتی دقیق تر بررسی کنیم می بینیم که سه تا اسکیم داره&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hamrahcard
+http
+https
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;اون اولی که کار خاصی نمیکنه فقط اپ رو باز میکنه ولی اون دوتای بعدی که شبیه به هم هستن می تونن دستوراتی رو اجرا کنن&lt;br /&gt;
+فقط یه نکته ای داره این که در اندروید 12 شما باید به اپ همراه کارت اجازه باز کردن اسکیم های &lt;code&gt;https&lt;/code&gt; رو بدید ولی در اندرویدهای پایین تر یه پاپ آپ باز میشه که به شما میگه دست داری با کدوم اپ باز کنم این آدرس رو.&lt;br /&gt;
+برای مثل ما میخوام قسمت کارت به کارت رو باز کنیم برای اینکار کافیه کامند زیر رو اجرا کنیم:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb shell am start -W -a android.intent.action.VIEW -d &amp;quot;https://i.hamrahcard.ir/c2c&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&quot;khb-hala-kh-chy&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;direct-link&quot; href=&quot;https://example.com/posts/2023-02-08-an-idea-for-banking-applications/#khb-hala-kh-chy&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt; خب حالا که چی ؟&lt;/h1&gt;
+&lt;p&gt;من دوست داشتم می تونستم شماره کارت هم بهش پاس میدادم مثلا اینطوری :&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb shell am start -W -a android.intent.action.VIEW -d &amp;quot;https://i.hamrahcard.ir/c2c?to=2222222222222222&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;که دیگه زحمت شماره زدن رو نکشیم و اینکه از اسکیم &lt;code&gt;hamrahcard&lt;/code&gt; استفاده بشه که با اسکیم دیفالت مرورگرها قاطی نشه&lt;/p&gt;
+&lt;p&gt;همین...&lt;/p&gt;
 </content>
 	</entry>
 </feed>
